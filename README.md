@@ -21,3 +21,10 @@ For more information visit [GTest](https://github.com/google/googletest)
 3. make
 
 The executables for each subdirectory will be present in the build folder in their respective folders
+
+
+### Steps to clean and build all the SubDirectories at once
+
+1. ./CleanAndBuild.sh
+
+The executables for each subdirectory will be present in the build folder in their respective folders
