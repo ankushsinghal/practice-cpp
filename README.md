@@ -19,3 +19,5 @@ For more information visit [GTest](https://github.com/google/googletest)
 1. cd build/
 2. cmake ..
 3. make
+
+The executables for each subdirectory will be present in the build folder in their respective folders
