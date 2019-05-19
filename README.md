@@ -13,3 +13,9 @@ The Unit Tests for each of the Modules have geen written using the **GTest** tes
 6. sudo cp \*.a /usr/lib
 
 For more information visit [GTest](https://github.com/google/googletest)
+
+### Steps to build all the SubDirectories at once
+
+1. cd build/
+2. cmake ..
+3. make
