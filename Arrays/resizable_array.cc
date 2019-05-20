@@ -20,3 +20,7 @@ ResizableArray::~ResizableArray(){
 int ResizableArray::size(){
     return this->size_;
 }
+
+int ResizableArray::capacity(){
+    return this->capacity_;
+}

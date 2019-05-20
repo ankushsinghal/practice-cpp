@@ -24,6 +24,7 @@ public:
     ResizableArray();
     ~ResizableArray();
     int size();
+    int capacity();
 };
 
 #endif // RESIZABLE_ARRAY_H

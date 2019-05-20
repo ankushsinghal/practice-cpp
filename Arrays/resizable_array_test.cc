@@ -11,6 +11,7 @@
 TEST(ResizableArrayTest, InitializationTest){
     ResizableArray resizable_array;
     ASSERT_EQ(resizable_array.size(), 0);
+    ASSERT_EQ(resizable_array.capacity(), 16);
 }
 
 int main(int argc, char **argv){
