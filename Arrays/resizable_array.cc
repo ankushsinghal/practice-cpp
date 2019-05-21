@@ -103,3 +103,85 @@ void ResizableArray::prepend(int elem)
 {
   this->insert(0, elem);
 }
+
+int ResizableArray::pop()
+{
+  if (this->isEmpty())
+  {
+    std::cout<<"Nothing to pop!"<<std::endl;
+    exit(EXIT_FAILURE);
+  } 
+  else
+  {
+    this->size_--;
+    return *(this->arr_ + this->size_);
+  }
+}
+
+void ResizableArray::deleteAt(int index)
+{
+  if (this->isEmpty())
+  {
+    std::cout<<"Nothing to delete!"<<std::endl;
+    exit(EXIT_FAILURE);
+  }
+  else if (index >= this->size_)
+  {
+    std::cout<<"Index out of bounds"<<std::endl;
+    exit(EXIT_FAILURE);
+  }
+  else
+  {
+    for(int i = index; i < this->size_ - 1; i++){
+      *(this->arr_ + i) = *(this->arr_ + i + 1);
+    }
+    this->size_--;
+  }
+}
+
+void ResizableArray::remove(int elem)
+{
+  if (this->isEmpty())
+  {
+    std::cout<<"Nothing to remove!"<<std::endl;
+    exit(EXIT_FAILURE);
+  }
+  else
+  {
+    int i = 0;
+    int size = this->size_;
+    while (i < size)
+    {
+      if (*(this->arr_ + i) == elem)
+      {
+        this->deleteAt(i);
+        size = this->size_;
+      }
+      else
+      {
+        i++;
+      }
+    }
+  }
+}
+
+int ResizableArray::find(int elem)
+{
+  if (this->isEmpty())
+  {
+    std::cout<<"Nothing to find!"<<std::endl;
+    return -1;
+  }
+  else
+  {
+    for (int i = 0; i < this->size_; i++)
+    {
+      if (*(this->arr_ + i) == elem)
+      {
+        return i;
+      }
+    }
+  }
+  std::cout<<"Element not found!"<<std::endl;
+  return -1;
+}

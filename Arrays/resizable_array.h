@@ -59,6 +59,18 @@ class ResizableArray
 
   // Method to insert the elem at the starting of the array
   void prepend(int elem);
+
+  // Method to remove element from the end of the array
+  int pop();
+
+  // Method to delete the element at given index
+  void deleteAt(int index);
+
+  // Method to remove an elem from the array (Removes multiple instances as well)
+  void remove(int elem);
+
+  // Method to find the index of the first occurence of the elem. Returns -1 if not found
+  int find(int elem);
 };
 
 #endif // RESIZABLE_ARRAY_H
