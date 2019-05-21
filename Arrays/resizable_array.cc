@@ -7,20 +7,99 @@
 
 #include "resizable_array.h"
 
-ResizableArray::ResizableArray(){
-    this->size_ = 0;
-    this->capacity_ = 16;
-    this->arr_ = new int[16];
+ResizableArray::ResizableArray()
+{
+  this->size_ = 0;
+  this->capacity_ = kMinArraySize;
+  this->arr_ = new int[this->capacity_];
 }
 
-ResizableArray::~ResizableArray(){
-    delete[] this->arr_;
+ResizableArray::ResizableArray(int cap)
+{
+  this->size_ = 0;
+  this->capacity_ = cap;
+  this->arr_ = new int[this->capacity_];
 }
 
-int ResizableArray::size(){
-    return this->size_;
+ResizableArray::~ResizableArray()
+{
+  delete[] this->arr_;
 }
 
-int ResizableArray::capacity(){
-    return this->capacity_;
+int ResizableArray::size()
+{
+  return this->size_;
+}
+
+int ResizableArray::capacity()
+{
+  return this->capacity_;
+}
+
+bool ResizableArray::isEmpty()
+{
+  if (this->size_ == 0)
+  {
+    return true;
+  }
+  return false;
+}
+
+int ResizableArray::at(int index)
+{
+  if (index < 0 || index >= this->size_)
+  {
+    std::cout << "Index out of bounds!" << std::endl;
+    exit(EXIT_FAILURE);
+  }
+  return *(this->arr_ + index);
+}
+
+void ResizableArray::increaseCapacity()
+{
+  int new_capacity = this->capacity_ * kMultiplyFactor;
+  int *new_array = new int[new_capacity];
+  for (int i = 0; i < this->capacity_; i++)
+  {
+    *(new_array + i) = *(this->arr_ + i);
+  }
+  this->capacity_ = new_capacity;
+  delete[] this->arr_;
+  this->arr_ = new_array;
+}
+
+void ResizableArray::push(int elem)
+{
+  if (this->size_ >= this->capacity_)
+  {
+    this->increaseCapacity();
+  }
+  *(this->arr_ + this->size_) = elem;
+  this->size_++;
+}
+
+void ResizableArray::insert(int index, int elem)
+{
+  if (index < 0 || index >= this->size_)
+  {
+    std::cout << "Index out of bounds!" << std::endl;
+    exit(EXIT_FAILURE);
+  }
+  else
+  {
+    if (this->size_ >= this->capacity_)
+    {
+      this->increaseCapacity();
+    }
+    for (int i = index; i < this->size_; i++)
+    {
+      *(this->arr_ + i + 1) = *(this->arr_ + i);
+    }
+    *(this->arr_ + index) = elem;
+  }
+}
+
+void ResizableArray::prepend(int elem)
+{
+  this->insert(0, elem);
 }

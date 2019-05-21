@@ -8,13 +8,15 @@
 #include "resizable_array.h"
 #include <gtest/gtest.h>
 
-TEST(ResizableArrayTest, InitializationTest){
-    ResizableArray resizable_array;
-    ASSERT_EQ(resizable_array.size(), 0);
-    ASSERT_EQ(resizable_array.capacity(), 16);
+TEST(ResizableArrayTest, InitializationTest)
+{
+  ResizableArray resizable_array;
+  ASSERT_EQ(resizable_array.size(), 0);
+  ASSERT_EQ(resizable_array.capacity(), 16);
 }
 
-int main(int argc, char **argv){
-    testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
+int main(int argc, char **argv)
+{
+  testing::InitGoogleTest(&argc, argv);
+  return RUN_ALL_TESTS();
 }
