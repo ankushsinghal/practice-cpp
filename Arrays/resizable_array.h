@@ -18,6 +18,9 @@ const int kMinArraySize = 16;
 // The factor by which we want to resize the array if it fills up
 const int kMultiplyFactor = 2;
 
+// Error integer return value
+const int kErrorValue = -404;
+
 class ResizableArray
 {
 

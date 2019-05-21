@@ -50,7 +50,7 @@ int ResizableArray::at(int index)
   if (index < 0 || index >= this->size_)
   {
     std::cout << "Index out of bounds!" << std::endl;
-    exit(EXIT_FAILURE);
+    return kErrorValue;
   }
   return *(this->arr_ + index);
 }
@@ -83,7 +83,7 @@ void ResizableArray::insert(int index, int elem)
   if (index < 0 || index >= this->size_)
   {
     std::cout << "Index out of bounds!" << std::endl;
-    exit(EXIT_FAILURE);
+    return;
   }
   else
   {
@@ -109,7 +109,7 @@ int ResizableArray::pop()
   if (this->isEmpty())
   {
     std::cout<<"Nothing to pop!"<<std::endl;
-    exit(EXIT_FAILURE);
+    return kErrorValue;
   } 
   else
   {
@@ -123,12 +123,12 @@ void ResizableArray::deleteAt(int index)
   if (this->isEmpty())
   {
     std::cout<<"Nothing to delete!"<<std::endl;
-    exit(EXIT_FAILURE);
+    return;
   }
   else if (index >= this->size_)
   {
     std::cout<<"Index out of bounds"<<std::endl;
-    exit(EXIT_FAILURE);
+    return;
   }
   else
   {
@@ -144,7 +144,7 @@ void ResizableArray::remove(int elem)
   if (this->isEmpty())
   {
     std::cout<<"Nothing to remove!"<<std::endl;
-    exit(EXIT_FAILURE);
+    return;
   }
   else
   {
