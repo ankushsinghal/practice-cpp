@@ -49,7 +49,7 @@ int ResizableArray::at(int index)
 {
   if (index < 0 || index >= this->size_)
   {
-    std::cout << "Index out of bounds!" << std::endl;
+    std::cout << "at : Index out of bounds!" << std::endl;
     return kErrorValue;
   }
   return *(this->arr_ + index);
@@ -82,7 +82,7 @@ void ResizableArray::insert(int index, int elem)
 {
   if (index < 0 || index >= this->size_)
   {
-    std::cout << "Index out of bounds!" << std::endl;
+    std::cout << "insert : Index out of bounds!" << std::endl;
     return;
   }
   else
@@ -91,11 +91,12 @@ void ResizableArray::insert(int index, int elem)
     {
       this->increaseCapacity();
     }
-    for (int i = index; i < this->size_; i++)
+    for (int i = this->size_; i > index; i--)
     {
-      *(this->arr_ + i + 1) = *(this->arr_ + i);
+      *(this->arr_ + i) = *(this->arr_ + i - 1);
     }
     *(this->arr_ + index) = elem;
+    this->size_++;
   }
 }
 
@@ -127,7 +128,7 @@ void ResizableArray::deleteAt(int index)
   }
   else if (index >= this->size_)
   {
-    std::cout<<"Index out of bounds"<<std::endl;
+    std::cout<<"deleteAt : Index out of bounds"<<std::endl;
     return;
   }
   else
