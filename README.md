@@ -10,7 +10,8 @@ The Unit Tests for each of the Modules have geen written using the **GTest** tes
 3. cd /usr/src/gtest
 4. sudo cmake CMakeLists.txt
 5. sudo make
-6. sudo cp \*.a /usr/lib
+6. cd lib/
+7. sudo cp \*.a /usr/lib
 
 For more information visit [GTest](https://github.com/google/googletest)
 
