@@ -7,3 +7,6 @@ cd $ROOT/build/Arrays
 
 cd $ROOT/build/LinkedList/SinglyLinkedList
 ./singlyLinkedListTest
+
+cd $ROOT/build/LinkedList/DoublyLinkedList
+./doublyLinkedListTest
