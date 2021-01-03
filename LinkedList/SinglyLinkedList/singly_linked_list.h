@@ -229,8 +229,11 @@ T SinglyLinkedList<T>::pop_back()
       pHead = &((*pHead)->next_);
     }
     Node<T> *deleteNode = (*pHead);
+    T deleteData = deleteNode->getData();
     delete deleteNode;
-    pHead = NULL;
+    *pHead = NULL;
+    size_--;
+    return deleteData;
   }
 }
 
@@ -349,6 +352,8 @@ void SinglyLinkedList<T>::remove_value(T value)
       Node<T> *deleteNode = *pHead;
       *pHead = (*pHead)->getNext();
       delete deleteNode;
+      size_--;
+      break;
     }
   }
 }
