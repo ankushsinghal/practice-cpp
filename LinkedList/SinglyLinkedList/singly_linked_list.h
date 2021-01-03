@@ -15,12 +15,31 @@
 template <class T>
 class Node
 {
- public:
+ private:
   // The data object of DataType T present at the Node
   T data_;
 
   // The pointer to the next Node of DataType T
   Node *next_;
+
+ public:
+  // Default Constructor for Node
+  Node();
+
+  // Constructor with data for Node
+  Node(T data);
+
+  // Setter for Node data
+  void setData(T data);
+
+  // Getter for Node data
+  T getData();
+
+  // Setter for Node next pointer
+  void setNext(Node *next);
+
+  // Getter for Node next pointer
+  Node *getNext();
 };
 
 template <class T>
@@ -36,7 +55,10 @@ class SinglyLinkedList
  public:
   // Default Constructor for SinglyLinkedList
   SinglyLinkedList();
-  
+
+  // Constructor with head pointer for SinglyLinkedList
+  SinglyLinkedList(Node<T> *head);
+
   // Returns the current size of the linked list
   int size();
 
@@ -71,7 +93,7 @@ class SinglyLinkedList
   void erase(int index);
 
   // Returns the value of the node at nth position from the end of the list
-  T value_n_from_end(n);
+  T value_n_from_end(int index);
 
   // Reverses the list
   void reverse();
