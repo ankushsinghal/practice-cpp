@@ -26,7 +26,6 @@ class SinglyLinkedListTestInteger : public ::testing::Test
 TEST_F(SinglyLinkedListTestInteger, ConstructorTest)
 {
   EXPECT_EQ(list1.size(), 0);
-  EXPECT_EQ(list1.front(), nullptr);
 }
 
 TEST_F(SinglyLinkedListTestInteger, IsEmptyTest)
