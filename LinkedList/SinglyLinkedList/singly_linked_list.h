@@ -34,6 +34,9 @@ class SinglyLinkedList
   int size_;
 
  public:
+  // Default Constructor for SinglyLinkedList
+  SinglyLinkedList();
+  
   // Returns the current size of the linked list
   int size();
 
