@@ -58,9 +58,6 @@ class SinglyLinkedList
   // Default Constructor for SinglyLinkedList
   SinglyLinkedList();
 
-  // Constructor with head pointer for SinglyLinkedList
-  SinglyLinkedList(Node<T> *head);
-
   // Returns the current size of the linked list
   int size();
 
@@ -146,13 +143,6 @@ SinglyLinkedList<T>::SinglyLinkedList()
 {
   size_ = 0;
   head_ = NULL;
-}
-
-template <class T>
-SinglyLinkedList<T>::SinglyLinkedList(Node<T> *head)
-{
-  size_ = 0;
-  head_ = head;
 }
 
 template <class T>
