@@ -8,6 +8,9 @@
 #ifndef SINGLY_LINKED_LIST_H
 #define SINGLY_LINKED_LIST_H
 
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wreturn-type"
+
 #include <iostream>
 #include <stdio.h>
 #include <malloc.h>
@@ -357,5 +360,7 @@ void SinglyLinkedList<T>::remove_value(T value)
     }
   }
 }
+
+#pragma GCC diagnostic pop
 
 #endif //SINGLY_LINKED_LIST_H
