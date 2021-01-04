@@ -10,3 +10,6 @@ cd $ROOT/build/LinkedList/SinglyLinkedList
 
 cd $ROOT/build/LinkedList/DoublyLinkedList
 ./doublyLinkedListTest
+
+cd $ROOT/build/Queue
+./queueTest
