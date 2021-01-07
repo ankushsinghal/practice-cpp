@@ -13,3 +13,6 @@ cd $ROOT/build/LinkedList/DoublyLinkedList
 
 cd $ROOT/build/Queue
 ./queueTest
+
+cd $ROOT/build/HashTable
+./rabinKarpTest
