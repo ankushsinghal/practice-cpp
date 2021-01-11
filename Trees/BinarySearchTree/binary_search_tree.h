@@ -18,9 +18,18 @@
 template <class T>
 class Node
 {
+ private:
   T data_;
   Node *left_;
   Node *right_;
+ 
+ public:
+  voif set_data(T data);
+  void set_left(Node<T> *left);
+  void set_right(Node<T> *right);
+  T get_data();
+  Node<T> *get_left();
+  Node<T> *get_right();
 };
 
 template <class T>
@@ -31,6 +40,10 @@ class BinarySearchTree
   int size_;
 
  public:
+
+  // defualt constructor
+  BinarySearchTree();
+
   // insert value into tree
   insert(T value);
 
@@ -63,6 +76,9 @@ class BinarySearchTree
 
   // returns next-highest value in tree after given value, -1 if none
   T get_successor(T value);
+
+  // returns root node - Only for testing purposes
+  Node<T> *get_root();
 };
 
 #pragma GCC diagnostic pop
