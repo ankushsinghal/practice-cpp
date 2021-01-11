@@ -24,7 +24,7 @@ class Node
   Node *right_;
  
  public:
-  voif set_data(T data);
+  void set_data(T data);
   void set_left(Node<T> *left);
   void set_right(Node<T> *right);
   T get_data();
@@ -45,7 +45,7 @@ class BinarySearchTree
   BinarySearchTree();
 
   // insert value into tree
-  insert(T value);
+  void insert(T value);
 
   // get count of values stored
   int get_node_count();
