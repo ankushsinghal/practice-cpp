@@ -17,3 +17,6 @@ cd $ROOT/build/Queue
 cd $ROOT/build/HashTable
 ./rabinKarpTest
 ./hashTableTest
+
+cd $ROOT/build/Trees/BinarySearchTree
+./binarySearchTreeTest
