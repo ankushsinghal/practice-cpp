@@ -24,6 +24,7 @@ class Node
   Node *right_;
  
  public:
+  Node(T data);
   void set_data(T data);
   void set_left(Node<T> *left);
   void set_right(Node<T> *right);
@@ -46,6 +47,7 @@ class BinarySearchTree
 
   // insert value into tree
   void insert(T value);
+  Node<T> *insertUtil(Node<T> *root, T value);
 
   // get count of values stored
   int get_node_count();
@@ -80,6 +82,89 @@ class BinarySearchTree
   // returns root node - Only for testing purposes
   Node<T> *get_root();
 };
+
+
+
+template <class T>
+Node<T>::Node(T data)
+{
+  data_ = data;
+  left_ = NULL;
+  right = NULL;
+}
+
+template <class T>
+void Node<T>::set_data(T data)
+{
+  data_ = data;
+}
+
+template <class T>
+void Node<T>::set_left(Node *left)
+{
+  left_ = left;
+}
+
+template <class T>
+void Node<T>::set_right(Node *right)
+{
+  right_ = right;
+}
+
+template <class T>
+T Node<T>::get_data()
+{
+  return data_;
+}
+
+template <class T>
+Node<T> *Node<T>::get_left()
+{
+  return left_;
+}
+
+template <class T>
+Node<T> *Node<T>::get_right()
+{
+  return right_;
+}
+
+template <class T>
+BinarySearchTree<T>::BinarySearchTree()
+{
+  root_ = NULL;
+  size_ = 0;
+}
+
+template <class T>
+int BinarySearchTree<T>::get_node_count()
+{
+  return size_;
+}
+
+template <class T>
+void BinarySearchTree<T>::insert(T value)
+{
+  insertUtil(root_);
+}
+
+template <class T>
+Node<T> *BinarySearchTree<T>::insertUtil(Node<T> *root, T value)
+{
+  if (root = NULL)
+  {
+    root = new Node<T>::Node(value);
+  }
+  else if (value < root->get_left())
+  {
+    root->set_left(insertUtil(root->get_left(), value));
+  }
+  else
+  {
+    root->set_right(insertUtil(root->get_right()), value);
+  }
+  return root;
+}
 
 #pragma GCC diagnostic pop
 
