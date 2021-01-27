@@ -90,7 +90,7 @@ Node<T>::Node(T data)
 {
   data_ = data;
   left_ = NULL;
-  right = NULL;
+  right_ = NULL;
 }
 
 template <class T>
@@ -145,23 +145,24 @@ int BinarySearchTree<T>::get_node_count()
 template <class T>
 void BinarySearchTree<T>::insert(T value)
 {
-  insertUtil(root_);
+  insertUtil(root_, value);
 }
 
 template <class T>
 Node<T> *BinarySearchTree<T>::insertUtil(Node<T> *root, T value)
 {
-  if (root = NULL)
+  if (root == NULL)
   {
-    root = new Node<T>::Node(value);
+    root = new Node<T>(value);
+    size_++;
   }
-  else if (value < root->get_left())
+  else if (value < root->get_data())
   {
     root->set_left(insertUtil(root->get_left(), value));
   }
   else
   {
-    root->set_right(insertUtil(root->get_right()), value);
+    root->set_right(insertUtil(root->get_right(), value));
   }
   return root;
 }
