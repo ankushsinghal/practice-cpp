@@ -80,7 +80,7 @@ TEST(BinaryHeapTest, MaxHeapTest)
   ASSERT_EQ(elements[3], 4);
   ASSERT_EQ(elements[4], 6);
   ASSERT_EQ(elements[5], 1);
-  ASSERT_EQ(elements[5], 5);
+  ASSERT_EQ(elements[6], 5);
   ASSERT_EQ(bh.get_max(), 13);
   bh.remove(1);
   ASSERT_EQ(bh.get_size(), 6);
