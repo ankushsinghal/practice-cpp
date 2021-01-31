@@ -24,8 +24,9 @@ For more information visit [GTest](https://github.com/google/googletest)
 The executables for each subdirectory will be present in the build folder in their respective folders
 
 
-### Steps to clean and build all the SubDirectories at once
+### Steps to clean and build all the SubDirectories at once and then Run all tests
 
 1. ./CleanAndBuild.sh
+2. ./RunAllTests.sh
 
 The executables for each subdirectory will be present in the build folder in their respective folders
