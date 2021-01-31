@@ -20,3 +20,6 @@ cd $ROOT/build/HashTable
 
 cd $ROOT/build/Trees/BinarySearchTree
 ./binarySearchTreeTest
+
+cd $ROOT/build/Trees/BinaryHeap
+./binaryHeapTest
