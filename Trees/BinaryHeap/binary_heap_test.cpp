@@ -94,6 +94,39 @@ TEST(BinaryHeapTest, MaxHeapTest)
   ASSERT_EQ(elements[5], 1);
 }
 
+TEST(BinaryHeapTest, HeapSortTest)
+{
+  BinaryHeap bh;
+  bh.insert_without_property(4);
+  bh.insert_without_property(3);
+  bh.insert_without_property(7);
+  bh.insert_without_property(1);
+  bh.insert_without_property(2);
+  bh.insert_without_property(9);
+  bh.insert_without_property(10);
+  bh.insert_without_property(6);
+  bh.insert_without_property(8);
+  bh.insert_without_property(5);
+  bh.heapify();
+  vector<int> elements = bh.get_all_elements();
+  ASSERT_EQ(elements.size(), 10);
+  ASSERT_EQ(elements[0], 10);
+  ASSERT_EQ(elements[1], 8);
+  ASSERT_EQ(elements[2], 9);
+  ASSERT_EQ(elements[3], 6);
+  ASSERT_EQ(elements[4], 5);
+  ASSERT_EQ(elements[5], 4);
+  ASSERT_EQ(elements[6], 7);
+  ASSERT_EQ(elements[7], 3);
+  ASSERT_EQ(elements[8], 1);
+  ASSERT_EQ(elements[9], 2);
+  elements = bh.heap_sort();
+  for (int i = 0; i < elements.size(); i++)
+  {
+    ASSERT_EQ(elements[i], i + 1);
+  }
+}
+
 int main(int argc, char **argv)
 {
   testing::InitGoogleTest(&argc, argv);
