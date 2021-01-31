@@ -172,3 +172,36 @@ vector<int> BinaryHeap::get_all_elements()
 {
   return elems_;
 }
+
+void BinaryHeap::insert_without_property(int elem)
+{
+  elems_.push_back(elem);
+  size_++;
+}
+
+void BinaryHeap::heapify()
+{
+  if (size_ > 0)
+  {
+    int parent = get_parent(size_ - 1);
+    for (int i = parent; i >= 0; i--)
+    {
+      percolate_down(i);
+    }
+  }
+  else
+  {
+    return;
+  }
+}
+
+vector<int> BinaryHeap::heap_sort()
+{
+  vector<int> answer;
+  while (size_ > 0)
+  {
+    answer.push_back(extract_max());
+  }
+  reverse(answer.begin(), answer.end());
+  return answer;
+}

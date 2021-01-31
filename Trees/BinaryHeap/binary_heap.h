@@ -15,6 +15,7 @@
 #include <stdio.h>
 #include <malloc.h>
 #include <vector>
+#include <algorithm>
 
 #define kErrorValue -404
 
@@ -66,6 +67,9 @@ class BinaryHeap
 
   // get all elements vector. Only to be used for testing
   vector<int> get_all_elements();
+
+  // Insert in heap without any checks. Only to be used for testing Heapify method
+  void insert_without_property(int elem);
 };
 
 
